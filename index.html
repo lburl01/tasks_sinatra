@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+  <head>
+    <title>To-Do List with Sinatra</title>
+  </head>
+  <body>
+    <h1>To-Do List</h1>
+
+    <p>Enter a 1 to see completed tasks and a 0 to see incomplete tasks: </p>
+    <form action="/api/tasks" method="GET">
+      <input type="checkbox" name="completed" value="1">Completed Tasks<br>
+      <input type="checkbox" name="completed" value="0">Incomplete Tasks<br>
+      <input type=submit>
+    </form>
+
+    <p>Enter word to search for it in the task descriptions: </p>
+    <form action="/api/tasks" method="GET">
+      <input type="text" name="search">
+      <input type=submit>
+    </form>
+
+    <p>Click to sort by priority: </p>
+    <form action="/api/tasks" method="GET">
+      <input type="text" hidden name="sort">
+      <input type=submit>
+    </form>
+
+    <!-- <p>See all to-do list items: </p>
+    <form action="/api/tasks" method="GET">
+      <input type=submit>
+    </form> -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="tasks.js"></script>
+  </body>
+</html
