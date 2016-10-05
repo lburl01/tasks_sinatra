@@ -24,7 +24,7 @@ end
 
 post '/api/tasks' do
   Task.create(description: params['description'], priority: params['priority'], completed: params['completed']).to_json #if i have to_json here, it won't save; get an error that it's an undefined method on a string object
-  status 200
+  status 201
 end
 
 put '/api/tasks/:id' do
@@ -45,11 +45,4 @@ delete '/api/tasks/:id' do
     halt(404)
   end
   t.destroy
-end
-
-set :public_folder, File.dirname(__FILE__) #+ '/../tasks_sinatra'
-#client - it's folder with all your file, including myapp.rb
-
-get "/" do
-  File.read('index.html')
 end
